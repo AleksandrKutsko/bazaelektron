@@ -1,0 +1,572 @@
+body{
+    font-family: Roboto;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+input{
+    font-family: Roboto;
+    font-size: 15px;
+    padding: 5px;
+}
+.button{
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #00B2CF;
+    color: white;
+    cursor: pointer;
+    width: max-content;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: #01839A;
+    font-weight: 600;
+}
+.hover{
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+.hover:hover{
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+.container{
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon-container{ /* блок для иконок с бордером */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #00B1C9;
+    border-radius: 50%;
+}
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #00B1C9;
+    border-radius: 50%;
+}
+.grey{
+    background-color: #F7F7F7;
+}
+
+/* -------------------------------- */
+/* ПОПАП ОКНА */
+/* -------------------------------- */
+.popup--map{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+}
+.popup--map-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup--map-window{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+.popup--map-window iframe{
+    width: 800px;
+    height: 80vh;
+}
+.map-btn{
+    cursor: pointer;
+}
+
+.popup--order-call{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+}
+.popup--order-call-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-btn-close {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.popup--order-call-window{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+.popup-btn-close:hover {
+    opacity: 1;
+    transition: 0.2s;
+}
+.popup-btn-close:before, .popup-btn-close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 4px;
+    background-color: black;
+}
+.popup-btn-close:before {
+    transform: rotate(45deg);
+}
+.popup-btn-close:after {
+    transform: rotate(-45deg);
+}
+.form--order-call{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    margin-top: 15px;
+}
+.form--order-call input[type="submit"]{
+    margin-top: 20px;
+    background-color: #00B1C9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.form--order-call input[type="submit"]:hover{
+    background-color: #01839A;
+}
+
+/* -------------------------------- */
+/* HEADER */
+/* -------------------------------- */
+header{
+    overflow: hidden;
+}
+.container.top-line{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-gap: 10px;
+    color: #97989A;
+    margin: 10px auto;
+}
+.top-line-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 10px;
+    justify-content: center;
+}
+.top-line-item h1{
+    color: #1B1B1B;
+    text-align: left;
+    margin: 0;
+    font-size: 23px;
+}
+.top-line-item>div>a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #97989A;
+}
+.top-line-item>div>a>b{
+    color: #29271F;
+}
+
+/* кнопки навигации */
+.header--navigation{
+    width: 100%;
+    background-color: #019DB6;
+    color: white;
+
+}
+.container.navigation{
+    margin: 0 auto;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    height: max-content;
+}
+.navigation-item{
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+.navigation-item:hover{
+    font-weight: 600;
+    background-color: #01839A;
+}
+.navigation-item>span{
+    padding: 20px 0;
+}
+.navigation-item.search{
+    padding: 0 20px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #01839A;
+}
+.navigation-item.search.hidden{
+    background-color: #019DB6;
+}
+.form--search{
+    display: flex;
+    position: absolute;
+    right: -1450px;
+    top: 58px;
+    padding: 10px;
+    background-color: #01839A;
+    z-index: 2;
+    border-radnavigation-itemius: 0 0 5px 5px;
+}
+.form--search>input[type="text"]{
+    width: 300px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+.form--search>input[type="submit"]{
+    background-color: white;
+    border: none;
+    /*border: 1px solid #01839A;*/
+    /* color: #01839A; */
+    border-radius: 0 5px 5px 0;
+    border-left: 1px solid #01839A;
+    cursor: pointer;
+}
+.navigation-item.list:after{
+
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+}
+.navigation-item.list{
+    position: relative;
+    cursor: pointer;
+}
+.navigation-item.list:hover .navigation-list-block{
+    display: flex;
+}
+.navigation-list-block{
+    z-index: 2;
+    position: absolute;
+    width: 250px;
+    top: 100%;
+    left: 0;
+    background-color: #01839A;
+    flex-direction: column;
+    padding: 10px 5px;
+    display: none;
+}
+.navigation-list-item{
+    padding: 5px 5px 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    text-align: left;
+    font-weight: 300;
+}
+.navigation-list-item:hover{
+    border-bottom: 1px solid rgba(255,255,255,1);
+}
+
+/* header слайдер */
+.header--slider{
+    overflow: hidden;
+    position: relative;
+}
+.header--slider-item{
+    height: 500px;
+}
+.header--slider-item.first{
+    background: 0% 20% url(../img/koster.jpg);
+    background-size: cover;
+}
+.header--slider-item.second{
+    background: 0% 20% url(../img/rybalka.jpg);
+    background-size: cover;
+}
+.container.slider{
+    align-items: flex-start;
+    height: 100%;
+    margin: 0 auto;
+}
+.slider-item-content{
+    margin-left: 70px;
+    width: 50%;
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 30px;
+}
+.slider-item-content h1{
+    margin: 5px 0;
+}
+.slider-item-btn{
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: #00B2CF;
+    color: white;
+    cursor: pointer;
+    width: max-content;
+    text-decoration: none;
+    text-shadow: none;
+}
+.slider-item-btn:hover{
+    background-color: #01839A;
+    font-weight: 600;
+}
+.swiper-pagination{
+    position: unset;
+    display: flex;
+    justify-content: center;
+    grid-gap: 4px;
+}
+.swiper-pagination-block{
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    z-index: 10;
+}
+.swiper-pagination-bullet{
+    width: 6px;
+    height: 6px;
+    border: 3px solid white;
+    background-color: white;
+}
+.swiper-pagination-bullet-active{
+    background-color: rgba(0,0,0,0);
+}
+
+/* -------------------------------------------- */
+/* Наши предложения */
+/* -------------------------------------------- */
+.offers--block-services{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.offers-block-services-item{
+    height: 250px;
+    overflow: hidden;
+}
+.offers-block-services-item.first .services-item-block{
+    background: url(../img/nomera.jfif) center center;
+    background-size: cover;
+}
+.offers-block-services-item.second .services-item-block{
+    background: url(../img/domiki.jpg) center center;
+    background-size: cover;
+}
+.offers-block-services-item.third .services-item-block{
+    background: url('../img/kemping.jpg') center center;
+    background-size: cover;
+    transition: background-size .3s ease-in;
+    -moz-transition: background-size .3s ease-in;
+    -web-kit-transition: background-size .3s ease-in
+}
+.services-item-block{
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    transition: background-size .3s ease-in;
+    -moz-transition: background-size .3s ease-in;
+    -web-kit-transition: background-size .3s ease-in
+}
+.offers-block-services-item .services-item-block:hover{
+    background-size: 120% 120%;
+    transition: background-size .3s ease-in;
+    -moz-transition: background-size .3s ease-in;
+    -web-kit-transition: background-size .3s ease-in
+}
+.services-item-block>span{
+    margin: 20px;
+    background-color: #02ADC8;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.offers--block-advantages{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    margin: 50px 0;
+}
+.offers--block-advantages-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-gap: 20px;
+}
+
+/* ------------------------------------------------- */
+/* К вашим услугам */
+/* ------------------------------------------------- */
+.block-name{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.block-name>h3{
+    margin-bottom: 15px;
+}
+.block-name>div{
+    width: 120px;
+    border-bottom: 2px solid #00AEC9;
+}
+.services--block-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 40px 0;
+}
+.block-content-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.block-content-item>div{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.block-content-item>h3{
+    color: #0DA6C8;
+}
+
+/* ---------------------------------------------- */
+/* ГАЛЛЕРЕЯ */
+/* ---------------------------------------------- */
+.gallety--block-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+    width: 100%;
+    margin: 30px 0;
+}
+.gallery--block-item{
+    height: 200px;
+    overflow: hidden;
+}
+.gallery--block-item:hover img{
+    transform: scale(1.05);
+}
+
+/* -------------------------------------------- */
+/* ПОДВАЛ */
+/* -------------------------------------------- */
+footer{
+    padding: 1px 0;
+    width: 100%;
+    background: linear-gradient(to top, #505153 0%, #333436 60%);
+}
+.container.footer{
+    grid-gap: 20px;
+}
+.footer>div{
+    width: 100%;
+    color: white;
+}
+.footer--content{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    padding: 10px 0;
+}
+.footer--content-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    font-size: 14px;
+}
+.footer--content-item.menu>a{
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+.footer--content-item.menu>a:hover{
+    transition: .2s;
+    color: #00B4CA;
+}
+.social-block{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+.social-block-item{
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.social-block-item:hover{
+    opacity: 1;
+}
+.footer--site-rights{
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.footer--site-rights span{
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-weight: 500;
+}
